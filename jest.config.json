@@ -1,0 +1,28 @@
+{
+  "testEnvironment": "node",
+  "rootDir": "./dist",
+  "collectCoverageFrom": [
+    "<rootDir>/src/**",
+    "!<rootDir>/src/**/*.data.json"
+  ],
+  "moduleNameMapper": {
+    "^#/(.*)$": "<rootDir>/src/$1",
+    "^!tests/(.*)$": "<rootDir>/tests/$1",
+    "astronomia/data(.*)$": "<rootDir>/../node_modules/astronomia/lib/data$1.cjs"
+  },
+  "setupFiles": [
+    "<rootDir>/tests/setup.js"
+  ],
+  "setupFilesAfterEnv": [
+    "<rootDir>/tests/setup-after-env.js"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "statements": 90,
+      "branches": 80,
+      "functions": 90,
+      "lines": 90
+    }
+  },
+  "testTimeout": 30000
+}

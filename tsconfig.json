@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2019",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "noFallthroughCasesInSwitch": false,
+    "forceConsistentCasingInFileNames": false,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "incremental": true,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "strictBindCallApply": false,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "rootDirs": ["src", "tests"],
+    "paths": {
+      "#/*": ["src/*"],
+      "!tests/*": ["tests/*"]
+    }
+  },
+  "exclude": ["dist", "node_modules"]
+}

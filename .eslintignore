@@ -1,0 +1,7 @@
+node_modules
+dist
+coverage
+jest*.js
+ormconfig*.js
+src/app/shared/database/entities
+index.ts

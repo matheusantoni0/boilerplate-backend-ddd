@@ -1,0 +1,67 @@
+version: "3"
+
+services:
+
+  app:
+    build:
+      context: .
+    container_name: alugamais
+    # command: npm run dev
+    ports:
+      - 8080:8080
+      - 9229:9229
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
+    networks:
+      - alugamais
+    tty: true
+
+  db:
+    image: mysql
+    restart: always
+    container_name: mysql-alugamais
+    environment:
+      MYSQL_PASSWORD: alugamais2023
+      MYSQL_USER: alugamais_admin
+      MYSQL_DB: alugamais
+      MYSQLDATA: /var/lib/mysql/data/mysqldata
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql:/var/lib/mysql/data
+    networks:
+      - alugamais
+
+  db_test:
+    image: mysql
+    restart: always
+    container_name: test-mysql-alugamais
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    environment:
+      MYSQL_PASSWORD: test2023
+      MYSQL_USER: test
+      MYSQL_DB: test_app
+    ports:
+      - 3306:3306
+    networks:
+      - alugamais
+
+  redis:
+    image: redis
+    container_name: redis-alugamais
+    command: redis-server --requirepass alugamais2023
+    ports:
+      - 6379:6379
+    networks:
+      - alugamais
+
+networks:
+  alugamais:
+    driver: bridge
+
+volumes:
+  mysql:
