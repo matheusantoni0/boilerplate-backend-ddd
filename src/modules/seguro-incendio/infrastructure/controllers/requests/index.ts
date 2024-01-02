@@ -1,1 +1,1 @@
-export * from "./assinar-termo-parceria.request";
+export * from "./create-user.request";

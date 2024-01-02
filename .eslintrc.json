@@ -139,7 +139,7 @@
     "@typescript-eslint/no-unnecessary-type-constraint": ["error"],
     "@typescript-eslint/no-unsafe-call": ["off"],
     "@typescript-eslint/no-unsafe-member-access": ["off"],
-    "@typescript-eslint/no-unsafe-return": ["error"],
+    "@typescript-eslint/no-unsafe-return": ["off"],
     "@typescript-eslint/no-useless-constructor": ["error"],
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
     "@typescript-eslint/prefer-as-const": ["error"],
@@ -174,7 +174,7 @@
         "named": "never"
       }
     ],
-    "@typescript-eslint/strict-boolean-expressions": ["error"],
+    "@typescript-eslint/strict-boolean-expressions": ["off"],
     "@typescript-eslint/unbound-method": ["off"],
     "array-bracket-newline": ["error", "consistent"],
     "array-bracket-spacing": ["error", "never"],

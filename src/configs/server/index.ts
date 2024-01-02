@@ -7,7 +7,7 @@ import { serve, setup } from "swagger-ui-express";
 
 import { BodyParserMiddleware } from "#/configs/server/body-parser-middleware";
 import { CorsMiddleware } from "#/configs/server/cors-middleware";
-import { diContainer } from "#/di-container";
+import { diContainer } from "#/configs/container/di-container";
 import { Swagger } from "#/configs/server/swagger";
 import { DefaultErrorHandlerMiddleware } from "#/configs/server/default-error-handler-middleware";
 

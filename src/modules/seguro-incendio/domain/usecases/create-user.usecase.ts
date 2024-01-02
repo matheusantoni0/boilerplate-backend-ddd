@@ -9,11 +9,11 @@ import { UserRepository } from "#/modules/seguro-incendio/domain/repositories";
 @injectable()
 export class CreateUserUseCase {
   public constructor(
-    @inject(UserRepositorySymbol) private readonly termoRepository: UserRepository,
+    @inject(UserRepositorySymbol) private readonly userRepository: UserRepository,
   ) {}
 
-  public async execute(user: User): Promise<Result<unknown, ApplicationError>> {
-    await this.termoRepository.upsert(user);
+  public async execute(user: User): Promise<Result<undefined, ApplicationError>> {
+    await this.userRepository.upsert(user);
     return Ok(undefined);
   }
 }

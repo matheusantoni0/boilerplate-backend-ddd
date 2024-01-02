@@ -5,11 +5,11 @@ require("module-alias").addAlias("#", __dirname);
 require("#/configs/env/load-envs");
 require("#/configs/server/load-modules").loadModules();
 
-import { diContainer } from "#/di-container";
 import { APP_PORT, POSTGRES_PORT } from "#/configs/env/settings";
 import { server } from "#/configs/server";
 import { DatabaseFactory } from "#/configs/database/database-factory";
 import { Container } from "#/configs/container";
+import { diContainer } from "#/configs/container/di-container";
 
 Container.useStorage(diContainer);
 
